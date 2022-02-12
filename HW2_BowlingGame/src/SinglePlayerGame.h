@@ -1,7 +1,7 @@
 #include <array>
 #include "Frame.h"
-
-class Game
+#include "AbstractGame.h"
+class SinglePlayerGame : public AbstractGame
 {
 private:
 	std::array<struct frame_s, 11> frames{};

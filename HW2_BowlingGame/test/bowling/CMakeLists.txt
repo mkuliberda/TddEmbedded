@@ -16,7 +16,7 @@ set(TEST_INCLUDE_DIRS
 )
 
 set(SRCS
-	../../src/Game.cpp
+	../../src/SinglePlayerGame.cpp
 )
 
 set(TEST_SRCS

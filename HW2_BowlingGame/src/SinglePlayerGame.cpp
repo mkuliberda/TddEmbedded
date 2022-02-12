@@ -1,6 +1,6 @@
-#include "Game.h"
+#include "SinglePlayerGame.h"
 
-int Game::score()
+int SinglePlayerGame::score()
 {
 	int final_score = 0;
 
@@ -11,7 +11,7 @@ int Game::score()
 	return final_score;
 }
 
-void Game::roll(int pins_knocked)
+void SinglePlayerGame::roll(int pins_knocked)
 {
 	if (this->roll_nbr < 21) {
 		if (this->roll_nbr % 2 == 0) { //this is 1st roll in frame
