@@ -1,19 +1,19 @@
-#include "SinglePlayerGame.h"
+#include "SingleplayerBowlingGame.h"
 
-int SinglePlayerGame::score()
+int SingleplayerBowlingGame::score()
 {
 	int final_score = 0;
 
-	for (struct frame_s &frame: this->frames) {
+	for (struct bowling_frame_s &frame: this->frames) {
 		final_score += (frame.scores[0] + frame.scores[1] + frame.bonus);
 	}
 
 	return final_score;
 }
 
-void SinglePlayerGame::roll(int pins_knocked)
+void SingleplayerBowlingGame::roll(int pins_knocked)
 {
-	if (this->roll_nbr < 21) {
+	if (this->roll_nbr < max_roll_nbr) {
 		if (this->roll_nbr % 2 == 0) { //this is 1st roll in frame
 			if (this->frame_nbr == 10 && this->frames[this->frame_nbr].extra_roll == false) {
 				this->frames[this->frame_nbr].scores[0] = 0;
@@ -58,5 +58,8 @@ void SinglePlayerGame::roll(int pins_knocked)
 		}
 	this->frame_nbr += (roll_nbr % 2);
 	this->roll_nbr ++;
+	}
+	else{
+		raise(SIGTERM);
 	}
 }

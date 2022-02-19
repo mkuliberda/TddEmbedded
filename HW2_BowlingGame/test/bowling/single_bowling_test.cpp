@@ -1,4 +1,4 @@
-#include "SinglePlayerGame.h"
+#include "SingleplayerBowlingGame.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -20,7 +20,7 @@ TEST_TEAR_DOWN(single_bowling)
 
 TEST(single_bowling, CASE1_WhenRolledOneScoreIsOneSinglePlayer)
 {    
-    SinglePlayerGame player1_scoring;
+    SingleplayerBowlingGame player1_scoring;
 
     player1_scoring.roll(1);
 
@@ -29,7 +29,7 @@ TEST(single_bowling, CASE1_WhenRolledOneScoreIsOneSinglePlayer)
 
 TEST(single_bowling, CASE2_WhenRolledTwoFramesWithOneStrikeOnFirstRollPartialScoreIsCorrectSinglePlayer)
 {    
-    SinglePlayerGame player1_scoring;
+    SingleplayerBowlingGame player1_scoring;
 
     player1_scoring.roll(10);
     player1_scoring.roll(1);
@@ -40,7 +40,7 @@ TEST(single_bowling, CASE2_WhenRolledTwoFramesWithOneStrikeOnFirstRollPartialSco
 
 TEST(single_bowling, CASE3_WhenRolledTwoFramesWithOneSpareOnFirstFramePartialScoreIsCorrectSinglePlayer)
 {    
-    SinglePlayerGame player1_scoring;
+    SingleplayerBowlingGame player1_scoring;
 
     player1_scoring.roll(0);
     player1_scoring.roll(10);
@@ -52,7 +52,7 @@ TEST(single_bowling, CASE3_WhenRolledTwoFramesWithOneSpareOnFirstFramePartialSco
 
 TEST(single_bowling, CASE4_WhenRolledLastFrameWithSingleStrikeFinalScoreIsCorrectSinglePlayer)
 {    
-    SinglePlayerGame player1_scoring;
+    SingleplayerBowlingGame player1_scoring;
     uint32_t expected{0};
 
     for (int i=0; i<18; i++){
@@ -71,7 +71,7 @@ TEST(single_bowling, CASE4_WhenRolledLastFrameWithSingleStrikeFinalScoreIsCorrec
 
 TEST(single_bowling, CASE5_WhenRolledTenFramesWithSparesAndStrikesFinalScoreIsCorrectSinglePlayer)
 {    
-    SinglePlayerGame player1_scoring;
+    SingleplayerBowlingGame player1_scoring;
     uint32_t expected{0};
 
     player1_scoring.roll(0);
@@ -106,7 +106,7 @@ TEST(single_bowling, CASE5_WhenRolledTenFramesWithSparesAndStrikesFinalScoreIsCo
 
 TEST(single_bowling, CASE6_WhenRolledLastFrameWithDoubleStrikeFinalScoreIsCorrectSinglePlayer)
 {    
-    SinglePlayerGame player1_scoring;
+    SingleplayerBowlingGame player1_scoring;
     uint32_t expected{0};
 
     for (int i=0; i<18; i++){
@@ -118,14 +118,14 @@ TEST(single_bowling, CASE6_WhenRolledLastFrameWithDoubleStrikeFinalScoreIsCorrec
     player1_scoring.roll(10);
     expected+=10;
     player1_scoring.roll(3);
-    expected+=3;
+    expected+=3;  
 
     TEST_ASSERT_EQUAL(expected, player1_scoring.score());
 }
 
 TEST(single_bowling, CASE7_WhenRolledLastFrameWithoutStrikeOrSpareFinalScoreIsCorrectSinglePlayer)
 {    
-    SinglePlayerGame player1_scoring;
+    SingleplayerBowlingGame player1_scoring;
     uint32_t expected{0};
 
     for (int i=0; i<20; i++){

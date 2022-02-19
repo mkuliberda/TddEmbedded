@@ -16,13 +16,15 @@ set(TEST_INCLUDE_DIRS
 )
 
 set(SRCS
-	../../src/SinglePlayerGame.cpp
+	../../src/SingleplayerBowlingGame.cpp
+	../../src/MultiplayerBowlingGame.cpp
 )
 
 set(TEST_SRCS
 	bowling_test_main.cpp
 	bowling_test_runner.cpp
-	bowling_test.cpp
+	single_bowling_test.cpp
+	multi_bowling_test.cpp
 )
 
 set(GLOBAL_DEFINES

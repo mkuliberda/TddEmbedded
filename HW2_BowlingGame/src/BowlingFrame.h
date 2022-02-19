@@ -1,4 +1,4 @@
-struct frame_s {
+struct bowling_frame_s {
 	int scores[2];
 	int bonus;
 	bool extra_roll;

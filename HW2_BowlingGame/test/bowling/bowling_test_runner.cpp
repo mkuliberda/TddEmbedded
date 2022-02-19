@@ -16,6 +16,11 @@ TEST_GROUP_RUNNER(single_bowling)
    RUN_TEST_CASE(single_bowling, CASE7_WhenRolledLastFrameWithoutStrikeOrSpareFinalScoreIsCorrectSinglePlayer);
 }
 
+TEST_GROUP_RUNNER(multi_bowling)
+{
+    RUN_TEST_CASE(multi_bowling, CASE1_WhenTwoPlayersRollOnesOnFirstFrameTheScoreIsTwoForEach);
+}
+
 #ifdef __cplusplus
 }
 #endif
