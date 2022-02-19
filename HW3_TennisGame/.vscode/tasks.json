@@ -4,12 +4,12 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "build tenis_test",
+            "label": "build tennis_test",
             "type": "shell",
             "command": "ninja -v",
             "args": [],
             "options": {
-                "cwd": "${workspaceFolder}/test/tenis/out"
+                "cwd": "${workspaceFolder}/test/tennis/out"
             },
             "group": {
                 "kind": "build",
@@ -18,12 +18,12 @@
             "problemMatcher": []
         },
         {
-            "label": "clean tenis_test",
+            "label": "clean tennis_test",
             "type": "shell",
             "command": "ninja -v clean",
             "args": [],
             "options": {
-                "cwd": "${workspaceFolder}/test/tenis/out"
+                "cwd": "${workspaceFolder}/test/tennis/out"
             },
             "group": {
                 "kind": "build",
@@ -32,11 +32,11 @@
         },
         {
             "type": "shell",
-            "label": "run tenis_test",
-            "command": "./tenis_test.exe",
+            "label": "run tennis_test",
+            "command": "./tennis_test.exe",
             "args": [],
             "options": {
-                "cwd": "${workspaceFolder}/test/tenis/out"
+                "cwd": "${workspaceFolder}/test/tennis/out"
             },
             "group": "test"
         },
